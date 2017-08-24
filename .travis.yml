@@ -1,3 +1,8 @@
 language: objective-c
 xcode_project: OSSExample.xcodeproj # path to your xcodeproj folder
 xcode_scheme: OSSExample
+
+before_install:
+- gem update fastlane --no-ri --no-rdoc --no-document
+
+script: fastlane scan
