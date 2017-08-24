@@ -5,7 +5,6 @@ platform :ios do
 
   desc 'Run all the tests'
   lane :tests do |options|
-    cocoapods
     scan(
       clean: true,
       output_directory: './artifacts/unit-tests',

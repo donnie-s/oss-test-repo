@@ -1,9 +1,9 @@
 language: objective-c
-xcode_project: OSSExample.xcodeproj # path to your xcodeproj folder
+xcode_workspace: OSSExample.xcworkspace
 xcode_scheme: OSSExample
 osx_image: xcode8.3
 
 before_install:
 - gem update fastlane --no-ri --no-rdoc --no-document
 
-script: fastlane scan
+script: fastlane ci
