@@ -1,0 +1,29 @@
+opt_out_usage
+default_platform :ios
+
+platform :ios do
+
+  desc 'Run all the tests'
+  lane :tests do |options|
+    cocoapods
+    scan(
+      clean: true,
+      output_directory: './artifacts/unit-tests',
+      scheme: 'OSSExample',
+      device: 'REM SDK Unit Tests',
+      code_coverage: true
+    )
+  end
+
+  desc 'CI build'
+  lane :ci do |options|
+    
+    # Install pods
+    cocoapods(
+      repo_update: false
+    )
+    tests(options)
+  end
+
+end
+# vim:syntax=ruby:et:sts=2:sw=2:ts=2:ff=unix:
